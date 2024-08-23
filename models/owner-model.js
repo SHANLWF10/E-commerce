@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb:127.0.0.1:27017/E-commerce");
 
 const userSchema = mongoose.Schema({
-  fullname: String,
-  email: String,
-  password: String,
+  fullname: {
+    type: String,
+    minLength: 3,
+    trim: true,
+  },
   cart: {
     type: Array,
     default: [],
