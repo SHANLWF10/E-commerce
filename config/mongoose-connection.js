@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
-
+const dbgr = require("debug")("development:mongoose");
 mongoose
   .connect("mongodb://127.0.0.1:27017/E-commerce")
   .then(() => {
-    console.log("Connected");
+    dbgr("Connected");
   })
   .catch((err) => {
     console.log(err);
