@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === "development") {
   router.post("/create", async (req, res) => {
     let owners = await ownerModel.find();
     if (owners.length > 0) {
-      res.send(503).send("You don't have any permissions");
+      res.status(503).send("You don't have any permissions");
     }
 
     let { fullname, email, password } = req.body;
